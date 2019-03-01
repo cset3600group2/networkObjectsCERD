@@ -1,7 +1,7 @@
 package sample;
 
 public class HostVM extends VMNode{
-    private String intrfc;
+    private VMInterface intrfc = new VMInterface();
     HostVM(OSWINLIN os){
         super(os);
     }
