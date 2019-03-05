@@ -2,9 +2,7 @@ package sample;
 
 public class HostVM extends VMNode{
     private VMInterface intrfc = new VMInterface();
-    HostVM(OSWINLIN os){
-        super(os);
-    }
+
 
     public void setIntrfc(){
        // this.intrfc = "192.168.0.0"; TO BE CHANGED based on gui action event

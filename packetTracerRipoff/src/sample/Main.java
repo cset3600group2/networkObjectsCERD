@@ -25,4 +25,33 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+
+
+
+    public void setOS_VER_SRC(VMNode vmNode, OSWINLIN os){
+        switch (os) {
+            case WINDOWS:
+                vmNode.setOs("WINDOWS");
+                break;
+            case LINUX:
+                vmNode.setOs("LINUX");
+                break;
+        }
+        if (vmNode.getOs() == "WINDOWS"){
+            vmNode.setVer("7.0");
+            vmNode.setSrc("/srv/VMLibrary/win7");
+        }
+        else{
+            vmNode.setVer("7.3");
+            vmNode.setSrc("/srv/VMLibrary/JeOS");
+        }
+
+
+
+        //  /srv/VMLibrary/JeOS
+
+    }
+
 }
+
