@@ -1,7 +1,7 @@
 package sample;
 
 public abstract class VMNode {
-    protected String name;
+    protected String name; //vm alias
     protected String os;
     protected String ver;
     protected String src;
@@ -23,7 +23,7 @@ public abstract class VMNode {
     public String getName(){
         return this.name;
     }
-    public void setName(String name){this.name = name;}
+    public void setName(String name){this.name = name;} // this.name = "windowsorlinuxHost"; TO BE CHANGED based on gui action event
     public String getVer(){ return this.ver; }
     public void setVer(String ver){this.ver = ver;}
 }

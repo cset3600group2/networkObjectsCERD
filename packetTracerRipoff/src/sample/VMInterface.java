@@ -1,35 +1,44 @@
 package sample;
 
 public class VMInterface {
-        private String name;
-        private boolean isConnected = false; //attached to a hub with same subnet through cable
+        private String label; //i.e. eth0
+        private boolean isConnected = false; //represents whether the VM is attached to a hub or not with compliant mask
         private String ipAddress;
         //private String subnet; for fw/switch
 
 
 
-        public void setInterfaceName(String name){
-            this.name = name;
-        }
-        public String getInterfaceName(){
-            return this.name;
-        }
-        public void setIpAddress(){
+        public void setIpAddress(String ipAddress){
+            this.ipAddress = ipAddress;
             return;
         }
+
         public String getIpAddress(){
             return this.ipAddress;
         }
-        public void setConnected(){
-            this.isConnected = true;
+
+        public void setInterfaceLabel(String name){
+            this.label = name;
         }
-        public boolean getConnected(){
+
+        public String getInterfaceLabel(){
+            return this.label;
+        }
+
+        public boolean getConnected(){//used for config file generation, if it returns false, should not generate a config file
             return this.isConnected;
         }
 
-        public void connectInterface(){
-            //called by event handler when a cable is clicked, followed by a click on the canvas objects
+        public void setConnected(){//uses subnet checking then applies flag state
+            this.isConnected = true;
         }
+        public void setDisconnected(){//used when a connected object is deleted
+            this.isConnected = false;
+        }
+
+
+
+
 
 }
 
